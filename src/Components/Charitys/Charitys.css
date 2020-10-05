@@ -1,0 +1,12 @@
+.cullam >img{
+    height: 250px;
+}
+.cullam >h1{
+    font-size: 20px;
+    background-color: orange;
+    color: aliceblue;
+    margin: auto;
+    width: 85%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}

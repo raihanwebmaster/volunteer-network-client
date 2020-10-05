@@ -1,0 +1,28 @@
+.from-body{
+    width: 500px;
+    margin: auto;
+    margin-top: 110px;
+}
+.from{ 
+    margin-top: 40px;       
+    border: 1px solid gray;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: white;
+    
+}
+.from > h2{
+    color: black;
+}
+.button{
+    width: 100%;
+}
+.control{
+    margin-top: 8px;
+    padding: 25px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 3px golid gray;
+    border-radius: 0;
+}

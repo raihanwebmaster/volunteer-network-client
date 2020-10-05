@@ -1,25 +1,53 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { createContext, useState } from 'react';
+import './App.css'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import { Container } from 'react-bootstrap';
+import Home from './Components/Home/Home';
+import NoMatch from './Components/NoMatch/NoMatch';
+import Register from './Components/Register/Register';
+import Login from './Components/Login/Login';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import ShowAppoinment from './Components/ShowAppointment/ShowAppoinment';
+export const UserContext= createContext();
+
 
 function App() {
+  const [loggedInUser, setLoggedinUser]=useState({})
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+     <UserContext.Provider value={[loggedInUser, setLoggedinUser]} >
+    <Container className="App">
+    <Router>
+      <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+        <Route path="/home">
+            <Home />
+        </Route>
+        
+        <PrivateRoute  path="/register/:charityname">
+            <Register></Register>
+          </PrivateRoute>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route path="/Appoinment">
+           <ShowAppoinment></ShowAppoinment>
+          </Route>
+        <Route  path="*">
+            <NoMatch/>
+        </Route>
+      </Switch>
+    </Router>
+  </Container>
+  </UserContext.Provider>  
+    
   );
 }
 
