@@ -13,13 +13,13 @@ This website has firebase authentication .User need to login before they can see
 
 ## Technology
 
--JavaScript 
--React-router
--React 
--Bootstrap
--Node.js
--Express.js
--MongoDB 
--Firebase Authentication 
--Heroku 
+- JavaScript 
+- React-router
+- React 
+- Bootstrap
+- Node.js
+- Express.js
+- MongoDB 
+- Firebase Authentication 
+- Heroku 
 
